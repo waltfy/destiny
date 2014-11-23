@@ -1,0 +1,29 @@
+{
+  "name": "destiny",
+  "version": "0.0.1",
+  "description": "A client for Bungie's Destiny API.",
+  "main": "lib/destiny.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:waltfy/dstny-client.git"
+  },
+  "keywords": [
+    "Bungie",
+    "Destiny",
+    "API",
+    "client"
+  ],
+  "author": "@waltfy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/waltfy/dstny-client/issues"
+  },
+  "homepage": "https://github.com/waltfy/dstny-client",
+  "dependencies": {
+    "lodash": "^2.4.1",
+    "request-promise": "^0.3.2"
+  }
+}

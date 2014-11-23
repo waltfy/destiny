@@ -1,0 +1,5 @@
+{
+  "DEFAULT_HOST": "https://bungie.net",
+  "DEFAULT_PORT": "443",
+  "DEFAULT_BASE_PATH": "/Platform/Destiny/"
+}
