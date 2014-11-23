@@ -1,6 +1,6 @@
 {
-  "name": "destiny",
-  "version": "0.0.2",
+  "name": "destiny-client",
+  "version": "0.0.1",
   "description": "A client for Bungie's Destiny API.",
   "main": "lib/destiny.js",
   "scripts": {
