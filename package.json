@@ -21,6 +21,6 @@
   "homepage": "https://github.com/waltfy/destiny",
   "dependencies": {
     "lodash": "^2.4.1",
-    "request-promise": "^0.3.2"
+    "superagent": "^0.21.0"
   }
 }
