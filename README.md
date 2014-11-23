@@ -1,3 +1,10 @@
+Destiny
+====
+
+> A tiny client for interacting with Bungie's Destiny API.
+
+# API
+
 ```js
 Destiny
   .search({ type: 1, name: 'tomphuu' })
