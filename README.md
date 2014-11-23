@@ -7,7 +7,7 @@ Destiny
 
 ```js
 Destiny
-  .search({ type: 1, name: 'tomphuu' })
+  .search({ type: 1, name: 'waltercarvalho' })
   .then(function (data) {
     data = JSON.parse(data);
     var id = data.Response[0].membershipId;
