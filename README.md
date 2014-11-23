@@ -4,6 +4,11 @@ Destiny
 > A tiny client for interacting with Bungie's Destiny API.
 
 # API
+## `search({ type: Number, name: String, query: Object })`
+* type: 1 - XBOX Live, 2 - PS
+* name: Your Bungie Account Name
+* query: An object used to create a query string.
+
 
 ```js
 Destiny
