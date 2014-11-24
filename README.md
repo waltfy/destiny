@@ -23,7 +23,7 @@ node:
 Note that if you wish, you may override the default host (`https://bungie.net/`) with your own. i.e. If you have a proxy server to handle your requests.
 
 ```js
-var Destiny = require('destiny-client')({ host:  });
+var Destiny = require('destiny-client')({ host: 'http://your-proxy.net' });
 ```
 
 ## API Overview
