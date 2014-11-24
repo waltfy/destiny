@@ -26,6 +26,20 @@ Note that if you wish, you may override the default host (`https://bungie.net/`)
 var Destiny = require('destiny-client')(/* { host: 'http://your-proxy.net' } */);
 ```
 
+web:
+
+Simply include `destiny.min.js` on your page. You most likely will need a proxy server due to `CORS`. I will upload a sample one shortly.
+
+```html
+<script src='destiny.min.js' type='text/javascript'></script>
+<script type="text/javascript">
+  var client = Destiny(/* { host: 'http://your-proxy.net' } */);
+  client
+    .search({ type: 2, 'yourusername' })
+    .end(function (err, res) { /* do stuff */ });
+</script>
+```
+
 ## API Overview
 
 **NOTE:** In order to get the definitions from Bungie (more detail, and more data) pass in `{ definitions: true }` in the optional parameter `query`.
