@@ -48,38 +48,42 @@ Simply include `desiny.js` or `destiny.min.js` on your page. You will most likel
 
 ## API Overview
 
+In all requests `type` is a `Number` representing the account type, or what network you are in. The network types are:
+* XBox Live: `1`
+* PlayStation Network (PSN): `2`
+
 **NOTE:** In order to get the definitions from Bungie (more detail, and more data) pass in `{ definitions: true }` in the optional parameter `query`.
 
 ### Search Player
 
 * **`Destiny.search({ type: Number, name: String[, query: Object] })`**
-  * `type`: 1 -> XBOX Live, 2 -> PSN
-  * `name`: Your Bungie Name
+  * `type`: Network type.
+  * `name`: Your Bungie name.
   * `query`: An object used to create a query string.
 
 ### Account
 
 * **`Destiny.account({ type: Number, id: String[, query: Object] })`**
-  * `type`: 1 -> XBOX Live, 2 -> PSN
+  * `type`: Network type.
   * `id`: Your Bungie membership id. If you don't know this use `Destiny.search`.
   * `query`: An object used to create a query string.
 
 ### Character (Inventory, Activities, Progression)
 
 * **`Destiny.character.inventory({ type: Number, membership: String, id: String[, query: Object] })`**
-  * `type`: 1 -> XBOX Live, 2 -> PSN
+  * `type`: Network type.
   * `membership`: Your Bungie membership id. If you don't know this use `Destiny.search`.
   * `id`: A destiny Character id.
   * `query`: An object used to create a query string.
 
 * **`Destiny.character.activities({ type: Number, membership: String, id: String[, query: Object] })`**
-  * `type`: 1 -> XBOX Live, 2 -> PSN
+  * `type`: Network type.
   * `membership`: Your Bungie membership id. If you don't know this use `Destiny.search`.
   * `id`: A destiny Character id.
   * `query`: An object used to create a query string.
 
 * **`Destiny.character.progression({ type: Number, membership: String, id: String[, query: Object] })`**
-  * `type`: 1 -> XBOX Live, 2 -> PSN
+  * `type`: Network type.
   * `membership`: Your Bungie membership id. If you don't know this use `Destiny.search`.
   * `id`: A destiny Character id.
   * `query`: An object used to create a query string.
