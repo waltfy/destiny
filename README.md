@@ -18,14 +18,18 @@ Destiny
 
 ## Getting Started
 
+proxy server:
+
+Unfortunately you cannot hit `https://bungie.net` directly. So if you plan to use this library in client-side code, due to `CORS` you'll have to run your own proxy server to handle your requests to Bungie for you. I have added an example proxy server ([`proxy.js`](https://github.com/waltfy/destiny/blob/develop/proxy.js)). Simply run `node proxy.js`. Credit to [@phuu](https://github.com/phuu).
+
 node:
 
 `$ npm install destiny-client`
 
-Note that if you wish, you may override the default host (`https://bungie.net/`) with your own. i.e. If you have a proxy server to handle your requests.
+Note that if you wish, you may override the default host (`https://bungie.net/`) with your own. i.e. If you have a proxy server to handle your requests. See proxy-server instructions above.
 
 ```js
-var Destiny = require('destiny-client')(/* { host: 'http://your-proxy.net' } */);
+var Destiny = require('destiny-client')(/* { host: 'http://localhost:9000' } */);
 ```
 
 web:
@@ -35,7 +39,7 @@ Simply include `destiny.min.js` on your page. You most likely will need a proxy 
 ```html
 <script src='destiny.min.js' type='text/javascript'></script>
 <script type="text/javascript">
-  var client = Destiny(/* { host: 'http://your-proxy.net' } */);
+  var client = Destiny(/* { host: 'http://localhost:9000' } */);
   client
     .search({ type: 2, 'yourusername' })
     .end(function (err, res) { /* do stuff */ });
