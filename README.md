@@ -4,6 +4,38 @@ Destiny-Client
 
 A simple client for interacting with Bungie's Destiny API.
 
+I hope to implement more and more end-points as time allows. Check list below: 
+```
+  http://www.bungie.net/platform/Destiny/Manifest/
+  http://www.bungie.net/platform/Destiny/Manifest/[i]/[j]/
+  http://www.bungie.net/platform/Destiny/SearchDestinyPlayer/[d]/[e]/
+  http://www.bungie.net/platform/Destiny/[membershipType]/Account/[accountId]/
+  http://www.bungie.net/platform/Destiny/[e]/Account/[d]/Character/[g]/
+  http://www.bungie.net/platform/Destiny/[membershipType]/Account/[accountId]/Character/[characterId]/Complete/
+  http://www.bungie.net/platform/Destiny/[membershipType]/Account/[d]/Character/[g]/Inventory/
+  http://www.bungie.net/platform/Destiny/[membershipType]/Account/[d]/Character/[h]/Inventory/[e]/
+  http://www.bungie.net/platform/Destiny/[membershipType]/Account/[d]/Character/[g]/Activities/
+  http://www.bungie.net/platform/Destiny/[membershipType]/Account/[d]/Character/[g]/Progression/
+  http://www.bungie.net/platform/Destiny/[membershipType]/MyAccount/Character/[characterId]/Vendors/
+  http://www.bungie.net/platform/Destiny/[membershipType]/MyAccount/Character/[characterId]/Vendors/Summaries/
+  http://www.bungie.net/platform/Destiny/[membershipType]/MyAccount/Character/[characterId]/Vendor/[g]/
+  http://www.bungie.net/platform/Destiny/[d]/MyAccount/Character/[f]/Advisors/
+  http://www.bungie.net/platform/Destiny/EquipItem/
+  http://www.bungie.net/platform/Destiny/Stats/Definition/
+  http://www.bungie.net/platform/Destiny/Stats/[e]/[d]/[f]/
+  http://www.bungie.net/platform/Destiny/Stats/ActivityHistory/[f]/[e]/[g]/
+  http://www.bungie.net/platform/Destiny/Stats/UniqueWeapons/[f]/[d]/[g]/
+  http://www.bungie.net/platform/Destiny/Stats/Leaderboards/[e]/[d]/
+  http://www.bungie.net/platform/Destiny/Stats/LeaderboardsForPsn/
+  http://www.bungie.net/platform/Destiny/Stats/Leaderboards/[e]/[d]/[f]/
+  http://www.bungie.net/platform/Destiny/Stats/PostGameCarnageReport/[e]/
+  http://www.bungie.net/platform/Destiny/Stats/AggregateActivityStats/[f]/[e]/[g]/
+  http://www.bungie.net/platform/Destiny/[d]/Stats/GetMembershipIdByDisplayName/[e]/
+  http://www.bungie.net/platform/Destiny/Vanguard/Grimoire/[d]/
+  http://www.bungie.net/platform/Destiny/Vanguard/Grimoire/[d]/[e]/
+  http://www.bungie.net/platform/Destiny/Vanguard/Grimoire/Definition/
+```
+
 Please feel free submit issues and requests.
 
 ## Usage
