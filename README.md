@@ -8,14 +8,14 @@ I hope to implement more and more end-points as time allows. Check list below:
 
 * /Manifest/
 * /Manifest/[i]/[j]/
-* ~~/SearchDestinyPlayer/[d]/[e]/~~
-* ~~/[membershipType]/Account/[accountId]/~~
-* ~~/[e]/Account/[d]/Character/[g]/~~
+* ~~**/SearchDestinyPlayer/[d]/[e]/**~~
+* ~~**/[membershipType]/Account/[accountId]/**~~
+* ~~**/[e]/Account/[d]/Character/[g]/**~~
 * /[membershipType]/Account/[accountId]/Character/[characterId]/Complete/
-* ~~/[membershipType]/Account/[d]/Character/[g]/Inventory/~~
+* ~~**/[membershipType]/Account/[d]/Character/[g]/Inventory/**~~
 * /[membershipType]/Account/[d]/Character/[h]/Inventory/[e]/
-* ~~/[membershipType]/Account/[d]/Character/[g]/Activities/~~
-* ~~/[membershipType]/Account/[d]/Character/[g]/Progression/~~
+* ~~**/[membershipType]/Account/[d]/Character/[g]/Activities/**~~
+* ~~**/[membershipType]/Account/[d]/Character/[g]/Progression/**~~
 * /[membershipType]/MyAccount/Character/[characterId]/Vendors/
 * /[membershipType]/MyAccount/Character/[characterId]/Vendors/Summaries/
 * /[membershipType]/MyAccount/Character/[characterId]/Vendor/[g]/
