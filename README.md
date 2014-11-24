@@ -4,37 +4,7 @@ Destiny-Client
 
 A simple client for interacting with Bungie's Destiny API.
 
-I hope to implement more and more end-points as time allows. Check list below: 
-
-* /Manifest/
-* /Manifest/[i]/[j]/
-* ~~**/SearchDestinyPlayer/[d]/[e]/**~~
-* ~~**/[membershipType]/Account/[accountId]/**~~
-* ~~**/[e]/Account/[d]/Character/[g]/**~~
-* /[membershipType]/Account/[accountId]/Character/[characterId]/Complete/
-* ~~**/[membershipType]/Account/[d]/Character/[g]/Inventory/**~~
-* /[membershipType]/Account/[d]/Character/[h]/Inventory/[e]/
-* ~~**/[membershipType]/Account/[d]/Character/[g]/Activities/**~~
-* ~~**/[membershipType]/Account/[d]/Character/[g]/Progression/**~~
-* /[membershipType]/MyAccount/Character/[characterId]/Vendors/
-* /[membershipType]/MyAccount/Character/[characterId]/Vendors/Summaries/
-* /[membershipType]/MyAccount/Character/[characterId]/Vendor/[g]/
-* /[d]/MyAccount/Character/[f]/Advisors/
-* /EquipItem/
-* /Stats/Definition/
-* /Stats/[e]/[d]/[f]/
-* /Stats/ActivityHistory/[f]/[e]/[g]/
-* /Stats/UniqueWeapons/[f]/[d]/[g]/
-* /Stats/Leaderboards/[e]/[d]/
-* /Stats/LeaderboardsForPsn/
-* /Stats/Leaderboards/[e]/[d]/[f]/
-* /Stats/PostGameCarnageReport/[e]/
-* /Stats/AggregateActivityStats/[f]/[e]/[g]/
-* /[d]/Stats/GetMembershipIdByDisplayName/[e]/
-* /Vanguard/Grimoire/[d]/
-* /Vanguard/Grimoire/[d]/[e]/
-* /Vanguard/Grimoire/Definition/
-
+The intent is to implement [more and more end-points](https://gist.github.com/waltfy/3f707a1ea7454997e484) as time allows.
 
 Please feel free submit issues and requests.
 
