@@ -4,6 +4,8 @@ Destiny-Client
 
 A simple client for interacting with Bungie's Destiny API.
 
+Please feel free submit issues and requests.
+
 ## Usage
 
 ```js
