@@ -44,7 +44,7 @@ Simply include `desiny.js` or `destiny.min.js` on your page. You will most likel
 <script type="text/javascript">
   var client = Destiny(/* { host: 'http://localhost:9000' } */);
   client
-    .search({ type: 2, 'yourusername' })
+    .search({ type: 2, name: 'yourusername' })
     .end(function (err, res) { /* do stuff */ });
 </script>
 ```
