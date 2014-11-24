@@ -1,5 +1,6 @@
 Destiny-Client
 ====
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/waltfy/destiny?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 A simple client for interacting with Bungie's Destiny API.
 
