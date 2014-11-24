@@ -49,8 +49,8 @@ Simply include `desiny.js` or `destiny.min.js` on your page. You will most likel
 ## API Overview
 
 In all requests `type` is a `Number` representing the account type, or what network you are in. The network types are:
-* XBox Live: `1`
-* PlayStation Network (PSN): `2`
+* `1`: XBox Live.
+* `2`: PlayStation Network (PSN).
 
 **NOTE:** In order to get the definitions from Bungie (more detail, and more data) pass in `{ definitions: true }` in the optional parameter `query`.
 
