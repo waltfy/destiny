@@ -27,7 +27,7 @@ Unfortunately you cannot hit `https://bungie.net` directly. So if you plan to us
 
 ### Node
 
-`$ npm install destiny-client`
+`npm install destiny-client`
 
 Note that if you wish, you may override the default host (`https://bungie.net/`) with your own. i.e. If you have a proxy server to handle your requests. See [proxy-server](#proxy-server) instructions above.
 
@@ -37,7 +37,7 @@ var Destiny = require('destiny-client')(/* { host: 'http://localhost:9000' } */)
 
 ### Web
 
-Simply include `desiny.js` or `destiny.min.js` on your page. You will most likely need a proxy server due to `CORS`. See [proxy-server](#proxy-server) instructions above.
+Simply include [`desiny.js`](https://raw.githubusercontent.com/waltfy/destiny/develop/destiny.js) or [`destiny.min.js`](https://raw.githubusercontent.com/waltfy/destiny/develop/destiny.min.js) on your page. You will most likely need a proxy server due to `CORS`. See [proxy-server](#proxy-server) instructions above.
 
 ```html
 <script src='destiny.min.js' type='text/javascript'></script>
