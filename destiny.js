@@ -8,14 +8,7 @@ module.exports={
 }
 
 },{}],3:[function(require,module,exports){
-// module.exports = require('./lib/destiny');
-var client = require('./lib/destiny')({ host: 'http://localhost:9000' });
-
-client
-  .main({ type: 1, membership: '4611686018439531850', id: "2305843009242314105" }).end()
-  .then(function (res) {
-    console.log(res.body);
-  });
+module.exports = require('./lib/destiny');
 
 },{"./lib/destiny":4}],4:[function(require,module,exports){
 /* jshint node:true */
