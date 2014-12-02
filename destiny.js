@@ -8,7 +8,14 @@ module.exports={
 }
 
 },{}],3:[function(require,module,exports){
-module.exports = require('./lib/destiny');
+// module.exports = require('./lib/destiny');
+var client = require('./lib/destiny')({ host: 'http://localhost:9000' });
+
+client
+  .main({ type: 1, membership: '4611686018439531850', id: "2305843009242314105" }).end()
+  .then(function (res) {
+    console.log(res.body);
+  });
 
 },{"./lib/destiny":4}],4:[function(require,module,exports){
 /* jshint node:true */
@@ -30,14 +37,18 @@ module.exports = function (config) {
 
   var common = {
     search: 'SearchDestinyPlayer/{type}/{name}/',
-    account: '{type}/Account/{id}'
+    account: '{type}/Account/{id}',
+    main: '{type}/Account/{membership}/Character/{id}/'
   };
 
-  var character = {
-    inventory: '{type}/Account/{membership}/Character/{id}/Inventory',
-    progression: '{type}/Account/{membership}/Character/{id}/Progression',
-    activities: '{type}/Account/{membership}/Character/{id}/Activities'
-  };
+  var character = [
+    'Activities',
+    'Inventory',
+    'Progression',
+  ].reduce(function (fold, endpoint) {
+    fold[endpoint.toLowerCase()] = '{type}/Account/{membership}/Character/{id}/'.concat(endpoint);
+    return fold;
+  }, {});
 
   var Destiny = {};
   _.extend(Destiny, bind(common, get));
