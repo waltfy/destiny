@@ -71,7 +71,7 @@ In all requests `type` is a `Number` representing the account type, or what netw
   * `id`: Your Bungie membership id. If you don't know this use `Destiny.search`.
   * `query`: An object used to create a query string.
 
-### Main (Complete Character).
+### Main (Character Overview).
 * **`Destiny.main({ type: Number, membership: String, id: String[, query: Object] })`**
   * `type`: Network type.
   * `membership`: Your Bungie membership id. If you don't know this use `Destiny.search`.
