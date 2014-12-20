@@ -1,9 +1,7 @@
-Destiny-Client
+Destiny-Client [![npm version](https://badge.fury.io/js/destiny-client.svg)](http://badge.fury.io/js/destiny-client) [![Gitter](https://badges.gitter.im/Destiny-Client.svg)](https://gitter.im/waltfy/destiny?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ====
 
-A simple client for interacting with Bungie's Destiny API.
-
-[![npm version](https://badge.fury.io/js/destiny-client.svg)](http://badge.fury.io/js/destiny-client) [![Gitter](https://badges.gitter.im/Destiny-Client.svg)](https://gitter.im/waltfy/destiny?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+A simple client for interacting with Bungie's Destiny API. 
 
 The intent is to implement [more and more end-points](https://gist.github.com/waltfy/3f707a1ea7454997e484) as time allows.
 
