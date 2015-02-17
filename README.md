@@ -35,7 +35,7 @@ var Destiny = require('destiny-client')(/* { host: 'http://localhost:9000' } */)
 
 ### Web
 
-Simply include [`desiny.js`](https://raw.githubusercontent.com/waltfy/destiny/develop/destiny.js) or [`destiny.min.js`](https://raw.githubusercontent.com/waltfy/destiny/develop/destiny.min.js) on your page. You will most likely need a proxy server due to `CORS`. See [proxy-server](#proxy-server) instructions above.
+Simply include [`destiny.js`](https://raw.githubusercontent.com/waltfy/destiny/develop/destiny.js) or [`destiny.min.js`](https://raw.githubusercontent.com/waltfy/destiny/develop/destiny.min.js) on your page. You will most likely need a proxy server due to `CORS`. See [proxy-server](#proxy-server) instructions above.
 
 ```html
 <script src='destiny.min.js' type='text/javascript'></script>
