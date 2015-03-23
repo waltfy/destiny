@@ -24,7 +24,8 @@ function copyHeaderFrom(source) {
   };
 }
 
-http.createServer(function(req, res) {
+http.createServer(function (req, res) {
+
   var outboundData = {
     method: req.method,
     host: BUNGIE.host,
@@ -58,6 +59,6 @@ http.createServer(function(req, res) {
     bungieRes.pipe(res);
   }).end();
 
-}).listen(process.argv[2], function() {
-  console.log('Bungie Proxy Server up at http://%s:%s', this.address().address, this.address().port);
+}).listen(process.argv[2], function () {
+  console.log('Bungie Proxy Server running on port %s', this.address().port);
 });
