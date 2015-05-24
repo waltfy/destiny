@@ -23,9 +23,12 @@
     "babel": "^5.4.7",
     "babel-eslint": "^3.1.8",
     "eslint": "^0.21.2",
-    "isomorphic-fetch": "^2.1.0",
-    "lodash": "^3.9.1",
     "uglify-loader": "^1.2.0",
     "webpack": "^1.9.9"
+  },
+  "dependencies": {
+    "es6-promise": "^2.1.1",
+    "isomorphic-fetch": "^2.1.0",
+    "lodash": "^3.9.1"
   }
 }

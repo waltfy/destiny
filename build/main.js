@@ -6,8 +6,6 @@ Object.defineProperty(exports, '__esModule', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-require('babel/polyfill');
-
 var _url = require('url');
 
 var _url2 = _interopRequireDefault(_url);
@@ -25,6 +23,8 @@ var _utils = require('./utils');
 var _endpoints = require('./endpoints');
 
 var _endpoints2 = _interopRequireDefault(_endpoints);
+
+require('es6-promise').polyfill();
 
 var HOST = 'https://www.bungie.net/platform/Destiny/'; // the is address to Bungie's API
 

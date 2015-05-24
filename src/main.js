@@ -1,6 +1,6 @@
 'use strict';
 
-import 'babel/polyfill';
+require('es6-promise').polyfill();
 import url from 'url';
 import _ from 'lodash';
 import fetch from 'isomorphic-fetch';

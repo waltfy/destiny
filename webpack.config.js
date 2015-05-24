@@ -10,13 +10,13 @@ module.exports = {
         library: 'Destiny'
     },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            },
-            mangle: {
-                except: ['exports', 'require', 'DestinyError']
-            }
-        })
+        // new webpack.optimize.UglifyJsPlugin({
+        //     compress: {
+        //         warnings: false
+        //     },
+        //     mangle: {
+        //         except: ['exports', 'require']
+        //     }
+        // })
     ]
 };

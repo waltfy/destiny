@@ -10,7 +10,7 @@ setup:
 	@chmod +x .git/hooks/pre-commit
 
 dev: setup
-	@babel src/ -d build -w & webpack --watch
+	@babel src/ -d build -w
 
 build: setup
 	@babel src/ -d build
