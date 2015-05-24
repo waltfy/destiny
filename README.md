@@ -427,8 +427,17 @@ As per defined in [`endpoints.js`](https://github.com/waltfy/destiny/blob/develo
 
 ## Change Log
 
-- `v.0.4.0` - Breaking changes.
-- `v.0.3.2`
+- `v.0.4.1` - 24/05/2015 - Breaking changes.
+  * Rewrite in ES6
+  * Cleaned up various bits code
+  * Addition of more end points, including Authorized ones `(EquipItem, TransferItem)`
+  * Moved build system to Webpack
+  * Now using `isomorphic-fetch`
+  * Added pre-commit hooks to ensure builds for both Node and Web are committed before pushing
+  * Removed old CONFIG file
+  * Improved overall architecture of the library
+  * Added linting 
+- `v.0.3.2` - **NOTE:** If you depended on this version make sure you explicit define it on your `package.json`.
 
 ## License
 
