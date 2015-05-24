@@ -1,0 +1,28 @@
+{
+    "env": {
+        "node": true
+    },
+    "ecmaFeatures": {
+        "arrowFunctions": true,
+        "blockBindings": true,
+        "defaultParams": true,
+        "destructuring": true,
+        "modules": true,
+        "objectLiteralComputedProperties": true,
+        "objectLiteralShorthandMethods": true,
+        "objectLiteralShorthandProperties": true,
+        "spread": true,
+        "templateStrings": true
+    },
+    "parser": "babel-eslint",
+    "rules": {
+        "quotes": [2, "single"],
+        "no-console": 0,
+        "new-cap": 0,
+        "comma-spacing": 1,
+        "no-shadow": 0
+    },
+    "globals": {
+        "console": true
+    }
+}

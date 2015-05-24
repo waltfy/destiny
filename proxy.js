@@ -34,6 +34,8 @@ http.createServer(function (req, res) {
     headers: req.headers
   };
 
+  console.log('req.headers.cookie:', req.headers.cookie);
+
   outboundData.headers.host = BUNGIE.host;
 
   console.log('outbound request ========================');

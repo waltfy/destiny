@@ -1,10 +1,19 @@
 PATH  := node_modules/.bin:$(PATH)
 SHELL := /bin/bash
 
-client:
-	browserify client.js > destiny.js
+.PHONY: setup main
 
-minify:
-	uglifyjs destiny.js > destiny.min.js
+setup:
+	npm install
+	@echo "Git hooks..."
+	@ln -s -f ../../hooks/pre-commit .git/hooks/pre-commit
+	@chmod +x .git/hooks/pre-commit
 
-build: client minify
+dev: setup
+	@babel src/ -d build -w & webpack --watch
+
+build: setup
+	@babel src/ -d build
+	@webpack
+
+main: build
