@@ -12,15 +12,17 @@ var _lodash = require('lodash');
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _isomorphicFetch = require('isomorphic-fetch');
-
-var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
-
 var _utils = require('./utils');
 
 var _endpoints = require('./endpoints');
 
 var _endpoints2 = _interopRequireDefault(_endpoints);
+
+if (!global.fetch) {
+    require('isomorphic-fetch');
+}
+
+// import fetch from 'isomorphic-fetch';
 
 var HOST = 'https://www.bungie.net/platform/Destiny/'; // the is address to Bungie's API
 
@@ -59,7 +61,7 @@ var createRequest = function createRequest(lib, method) {
 
             return params;
         }).then(function (params) {
-            return (0, _isomorphicFetch2['default'])(HOST + template(params), _lodash2['default'].assign(method.options, { headers: headers, body: JSON.stringify(params) }));
+            return fetch(HOST + template(params), _lodash2['default'].assign(method.options, { headers: headers, body: JSON.stringify(params) }));
         }).then(_utils.UTILS.json).then(_utils.UTILS.unwrapDestinyResponse);
     };
 

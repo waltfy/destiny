@@ -45,7 +45,7 @@ var Destiny =
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 
 	Object.defineProperty(exports, '__esModule', {
 	    value: true
@@ -59,15 +59,17 @@ var Destiny =
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
-	var _isomorphicFetch = __webpack_require__(5);
-
-	var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
-
 	var _utils = __webpack_require__(6);
 
 	var _endpoints = __webpack_require__(2);
 
 	var _endpoints2 = _interopRequireDefault(_endpoints);
+
+	if (!global.fetch) {
+	    __webpack_require__(5);
+	}
+
+	// import fetch from 'isomorphic-fetch';
 
 	var HOST = 'https://www.bungie.net/platform/Destiny/'; // the is address to Bungie's API
 
@@ -106,7 +108,7 @@ var Destiny =
 
 	            return params;
 	        }).then(function (params) {
-	            return (0, _isomorphicFetch2['default'])(HOST + template(params), _lodash2['default'].assign(method.options, { headers: headers, body: JSON.stringify(params) }));
+	            return fetch(HOST + template(params), _lodash2['default'].assign(method.options, { headers: headers, body: JSON.stringify(params) }));
 	        }).then(_utils.UTILS.json).then(_utils.UTILS.unwrapDestinyResponse);
 	    };
 
@@ -130,6 +132,7 @@ var Destiny =
 
 	exports['default'] = Destiny;
 	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
 /* 1 */
@@ -12343,7 +12346,7 @@ var Destiny =
 	  }
 	}.call(this));
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)(module), (function() { return this; }())))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)(module), (function() { return this; }())))
 
 /***/ },
 /* 4 */
@@ -13295,7 +13298,7 @@ var Destiny =
 	    };
 
 	    /* global define:true module:true window: true */
-	    if ("function" === 'function' && __webpack_require__(10)['amd']) {
+	    if ("function" === 'function' && __webpack_require__(9)['amd']) {
 	      !(__WEBPACK_AMD_DEFINE_RESULT__ = function() { return lib$es6$promise$umd$$ES6Promise; }.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	    } else if (typeof module !== 'undefined' && module['exports']) {
 	      module['exports'] = lib$es6$promise$umd$$ES6Promise;
@@ -13307,7 +13310,7 @@ var Destiny =
 	}).call(this);
 
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7), __webpack_require__(8).setImmediate, (function() { return this; }()), __webpack_require__(9)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7), __webpack_require__(8).setImmediate, (function() { return this; }()), __webpack_require__(10)(module)))
 
 /***/ },
 /* 5 */
@@ -13560,6 +13563,13 @@ var Destiny =
 /* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = function() { throw new Error("define cannot be used indirect"); };
+
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
 	module.exports = function(module) {
 		if(!module.webpackPolyfill) {
 			module.deprecate = function() {};
@@ -13570,13 +13580,6 @@ var Destiny =
 		}
 		return module;
 	}
-
-
-/***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = function() { throw new Error("define cannot be used indirect"); };
 
 
 /***/ },

@@ -2,9 +2,14 @@
 
 import { Promise } from 'es6-promise';
 import _ from 'lodash';
-import fetch from 'isomorphic-fetch';
 import { UTILS } from './utils';
 import ENDPOINTS from './endpoints';
+
+if (!global.fetch) {
+    require('isomorphic-fetch');
+}
+
+// import fetch from 'isomorphic-fetch';
 
 var HOST = 'https://www.bungie.net/platform/Destiny/'; // the is address to Bungie's API
 
