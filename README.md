@@ -55,52 +55,80 @@ Simply include [`destiny.js`](https://raw.githubusercontent.com/waltfy/destiny/d
 
 ## API Overview
 
-In all requests `type` is a `Number` representing the account type, or what network you are in. The network types are:
+**NOTE:** In all requests `membershipType` is a `Number` representing the account type, or what network you are in. The network types are:
 * `1`: XBox Live.
 * `2`: PlayStation Network (PSN).
 
 **NOTE:** In order to get the definitions from Bungie (more detail, and more data) pass in `{ definitions: true }` in the optional parameter `query`.
 
-### Search Player
 
-* **`Destiny.search({ type: Number, name: String[, query: Object] })`**
-  * `type`: Network type.
-  * `name`: Your Bungie name.
-  * `query`: An object used to create a query string.
+### Destiny::Search(params)
 
-### Account
+Returns an `Array` of accounts.
 
-* **`Destiny.account({ type: Number, id: String[, query: Object] })`**
-  * `type`: Network type.
-  * `id`: Your Bungie membership id. If you don't know this use `Destiny.search`.
-  * `query`: An object used to create a query string.
+params (`Object`)
+    - 'membershipType' - `Number`
+    - 'name' - `String`, the name of your account
 
-### Main (Character Overview)
-* **`Destiny.main({ type: Number, membership: String, id: String[, query: Object] })`**
-  * `type`: Network type.
-  * `membership`: Your Bungie membership id. If you don't know this use `Destiny.search`.
-  * `id`: A destiny Character id.
-  * `query`: An object used to create a query string.
+Sample Usage:
+```js
+var destiny = require('./index')();
 
-### Character (Inventory, Activities, Progression)
+destiny
+    .Search({
+        membershipType: 1,
+        name: 'waltercarvalho'
+    })
+    .then(function (res) {
+        console.log('res:', res);
+    })
+    .catch(function (err) {
+        console.log(err.stack);
+    });
+```
 
-* **`Destiny.character.inventory({ type: Number, membership: String, id: String[, query: Object] })`**
-  * `type`: Network type.
-  * `membership`: Your Bungie membership id. If you don't know this use `Destiny.search`.
-  * `id`: A destiny Character id.
-  * `query`: An object used to create a query string.
+Sample Response:
+```js
+[
+    {
+        iconPath: '/img/theme/destiny/icons/icon_xbl.png',
+        membershipType: 1,
+        membershipId: '4611686018439937004',
+        displayName: 'waltercarvalho'
+    }
+]
+```
 
-* **`Destiny.character.activities({ type: Number, membership: String, id: String[, query: Object] })`**
-  * `type`: Network type.
-  * `membership`: Your Bungie membership id. If you don't know this use `Destiny.search`.
-  * `id`: A destiny Character id.
-  * `query`: An object used to create a query string.
+- endpoints.js: `{ name: 'Search', url: 'SearchDestinyPlayer/${ membershipType }/${ name }/', required: ['membershipType', 'name'] }`
 
-* **`Destiny.character.progression({ type: Number, membership: String, id: String[, query: Object] })`**
-  * `type`: Network type.
-  * `membership`: Your Bungie membership id. If you don't know this use `Destiny.search`.
-  * `id`: A destiny Character id.
-  * `query`: An object used to create a query string.
+
+### Destiny::Account(params)
+
+- endpoints.js: `{ name: 'Account', url: '${ membershipType }/Account/${ membershipId }', required: ['membershipType', 'membershipId'] },`
+
+### Destiny::Character(params)
+
+- endpoints.js: `{ name: 'Character', url: '${ membershipType }/Account/${ membershipId }/Character/${ characterId }/', required: ['membershipType', 'membershipId', 'characterId'] }`
+
+### Destiny::Activities(params)
+
+- endpoints.js: `{ name: 'Activities', url: '${ membershipType }/Account/${ membershipId }/Character/${ characterId }/Activities', required: ['membershipType', 'membershipId', 'characterId'] }`
+
+### Destiny::Inventory(params)
+
+- endpoints.js: `{ name: 'Inventory', url: '${ membershipType }/Account/${ membershipId }/Character/${ characterId }/Inventory', required: ['membershipType', 'membershipId', 'characterId'] }`
+
+### Destiny::Progression(params)
+
+- endpoints.js: `{ name: 'Progression', url: '${ membershipType }/Account/${ membershipId }/Character/${ characterId }/Progression', required: ['membershipType', 'membershipId', 'characterId'] }`
+
+### Destiny::Equip(params, headers)
+
+- endpoints.js: `{ name: 'Equip', url: 'EquipItem', required: ['characterId', 'itemId', 'membershipType'] }`
+
+### Destiny::TransferItem(params, headers)
+
+- endpoints.js: `{ name: 'TransferItem', url: 'TransferItem', required: ['characterId', 'itemId', 'itemReferenceHash', 'membershipType'] }`
 
 
 ## License
