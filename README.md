@@ -59,7 +59,7 @@ Simply include [`destiny.js`](https://raw.githubusercontent.com/waltfy/destiny/d
 
 ## API Overview
 
-In all requests `type` is a `Number` representing the account type, or what network you are in. The network types are:
+In all requests `membershipType` is a `Number` representing the account type, or what network you are in. The network types are:
 * `1`: XBox Live.
 * `2`: PlayStation Network (PSN).
 
