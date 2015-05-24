@@ -66,10 +66,10 @@ Simply include [`destiny.js`](https://raw.githubusercontent.com/waltfy/destiny/d
 
 > Returns an `Array` of accounts.
 
-params (`Object`)
+`params` (`Object`)
 
-  - 'membershipType' - `Number`
-  - 'name' - `String`, the name of your account
+  - `membershipType` - `Number`
+  - `name` - `String`, the name of your account.
 
 #### Sample Usage:
 ```js
