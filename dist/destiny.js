@@ -12346,7 +12346,7 @@ var Destiny =
 	  }
 	}.call(this));
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)(module), (function() { return this; }())))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module), (function() { return this; }())))
 
 /***/ },
 /* 4 */
@@ -13298,7 +13298,7 @@ var Destiny =
 	    };
 
 	    /* global define:true module:true window: true */
-	    if ("function" === 'function' && __webpack_require__(9)['amd']) {
+	    if ("function" === 'function' && __webpack_require__(8)['amd']) {
 	      !(__WEBPACK_AMD_DEFINE_RESULT__ = function() { return lib$es6$promise$umd$$ES6Promise; }.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	    } else if (typeof module !== 'undefined' && module['exports']) {
 	      module['exports'] = lib$es6$promise$umd$$ES6Promise;
@@ -13310,7 +13310,7 @@ var Destiny =
 	}).call(this);
 
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7), __webpack_require__(8).setImmediate, (function() { return this; }()), __webpack_require__(10)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9), __webpack_require__(10).setImmediate, (function() { return this; }()), __webpack_require__(7)(module)))
 
 /***/ },
 /* 5 */
@@ -13383,6 +13383,29 @@ var Destiny =
 
 /***/ },
 /* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(module) {
+		if(!module.webpackPolyfill) {
+			module.deprecate = function() {};
+			module.paths = [];
+			// module.parent = undefined by default
+			module.children = [];
+			module.webpackPolyfill = 1;
+		}
+		return module;
+	}
+
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function() { throw new Error("define cannot be used indirect"); };
+
+
+/***/ },
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// shim for using process in browser
@@ -13478,10 +13501,10 @@ var Destiny =
 
 
 /***/ },
-/* 8 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(setImmediate, clearImmediate) {var nextTick = __webpack_require__(7).nextTick;
+	/* WEBPACK VAR INJECTION */(function(setImmediate, clearImmediate) {var nextTick = __webpack_require__(9).nextTick;
 	var apply = Function.prototype.apply;
 	var slice = Array.prototype.slice;
 	var immediateIds = {};
@@ -13557,30 +13580,7 @@ var Destiny =
 	exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate : function(id) {
 	  delete immediateIds[id];
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8).setImmediate, __webpack_require__(8).clearImmediate))
-
-/***/ },
-/* 9 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = function() { throw new Error("define cannot be used indirect"); };
-
-
-/***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = function(module) {
-		if(!module.webpackPolyfill) {
-			module.deprecate = function() {};
-			module.paths = [];
-			// module.parent = undefined by default
-			module.children = [];
-			module.webpackPolyfill = 1;
-		}
-		return module;
-	}
-
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10).setImmediate, __webpack_require__(10).clearImmediate))
 
 /***/ },
 /* 11 */
