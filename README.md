@@ -114,7 +114,7 @@ As per defined in [`endpoints.js`](https://github.com/waltfy/destiny/blob/develo
   - `membershipId` - `String`, your membership id.
 
 #### Sample Usage:
-
+```js
 var destiny = require('./index')();
 
 destiny
@@ -124,6 +124,7 @@ destiny
     })
     .then(res => { /* deal with response */ })
     .catch(err => { /* handle error */ });
+```
 
 #### Sample Response:
 ```js
