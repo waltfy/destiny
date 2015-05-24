@@ -1,27 +1,17 @@
 Destiny-Client [![npm version](https://badge.fury.io/js/destiny-client.svg)](http://badge.fury.io/js/destiny-client) [![Gitter](https://badges.gitter.im/Destiny-Client.svg)](https://gitter.im/waltfy/destiny?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ====
 
-A simple client for interacting with Bungie's Destiny API. 
+A simple client for interacting with Bungie's Destiny API.
 
 The intent is to implement [more and more end-points](https://gist.github.com/waltfy/3f707a1ea7454997e484) as time allows.
 
-Please feel free submit issues and requests.
-
-## Usage
-
-```js
-Destiny
-  .search({ type: 1, name: 'waltercarvalho' })
-  .end(function (err, res) {
-    // do stuff
-  });
-```
+Please feel free submit issues and requests, or [get in touch](//www.twitter.com/waltfy).
 
 ## Getting Started
 
 ### Proxy Server
 
-Unfortunately you cannot hit `https://bungie.net` directly. So if you plan to use this library in client-side code, due to `CORS` you'll have to run your own proxy server to handle your requests to Bungie for you. I have added an example proxy server ([`proxy.js`](https://github.com/waltfy/destiny/blob/develop/proxy.js)). Simply run `node proxy.js`. Credit to [@phuu](https://github.com/phuu).
+Unfortunately you cannot "hit" `https://bungie.net` directly. So if you plan to use this library in client-side code, due to `CORS` you'll have to run your own proxy server to handle your requests to Bungie for you. I have added an example proxy server ([`proxy.js`](https://github.com/waltfy/destiny/blob/develop/proxy.js)). Simply run `node proxy.js`. Credit to [@phuu](https://github.com/phuu).
 
 ### Node
 
@@ -30,20 +20,36 @@ Unfortunately you cannot hit `https://bungie.net` directly. So if you plan to us
 Note that if you wish, you may override the default host (`https://bungie.net/`) with your own. i.e. If you have a proxy server to handle your requests. See [proxy-server](#proxy-server) instructions above.
 
 ```js
-var Destiny = require('destiny-client')(/* { host: 'http://localhost:9000' } */);
+var destiny = require('destiny-client')();
+
+destiny
+  .Search({
+    memebershipType: 1,
+    name: 'waltercarvalho'
+  })
+  .then(users => {
+    console.debug('users', users);
+  });
 ```
 
 ### Web
 
-Simply include [`destiny.js`](https://raw.githubusercontent.com/waltfy/destiny/develop/destiny.js) or [`destiny.min.js`](https://raw.githubusercontent.com/waltfy/destiny/develop/destiny.min.js) on your page. You will most likely need a proxy server due to `CORS`. See [proxy-server](#proxy-server) instructions above.
+Simply include [`destiny.js`](https://raw.githubusercontent.com/waltfy/destiny/develop/destiny.js) on your page. You will most likely need a proxy server due to `CORS`. See [proxy-server](#proxy-server) instructions above.
 
 ```html
-<script src='destiny.min.js' type='text/javascript'></script>
+<script src='destiny.js' type='text/javascript'></script>
 <script type="text/javascript">
-  var client = Destiny(/* { host: 'http://localhost:9000' } */);
-  client
-    .search({ type: 2, name: 'yourusername' })
-    .end(function (err, res) { /* do stuff */ });
+
+    var destiny = Destiny('http://{{ host }}:{{ yourport }}/platform/Destiny/'); // this is your proxy server
+
+    destiny
+        .Search({
+            memebershipType: 1,
+            name: 'waltercarvalho'
+        })
+        .then(users => {
+            console.debug('users', users);
+        });
 </script>
 ```
 

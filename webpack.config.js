@@ -15,7 +15,7 @@ module.exports = {
                 warnings: false
             },
             mangle: {
-                except: ['exports', 'require']
+                except: ['exports', 'require', 'DestinyError']
             }
         })
     ]
