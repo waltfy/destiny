@@ -6,10 +6,6 @@ Object.defineProperty(exports, '__esModule', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _url = require('url');
-
-var _url2 = _interopRequireDefault(_url);
-
 var _lodash = require('lodash');
 
 var _lodash2 = _interopRequireDefault(_lodash);
@@ -63,7 +59,7 @@ var createRequest = function createRequest(lib, method) {
 
             return params;
         }).then(function (params) {
-            return (0, _isomorphicFetch2['default'])(_url2['default'].resolve(HOST, template(params)), _lodash2['default'].assign(method.options, { headers: headers, body: JSON.stringify(params) }));
+            return (0, _isomorphicFetch2['default'])(HOST + template(params), _lodash2['default'].assign(method.options, { headers: headers, body: JSON.stringify(params) }));
         }).then(_utils.UTILS.json).then(_utils.UTILS.unwrapDestinyResponse);
     };
 

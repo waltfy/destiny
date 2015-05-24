@@ -1,7 +1,6 @@
 'use strict';
 
 require('es6-promise').polyfill();
-import url from 'url';
 import _ from 'lodash';
 import fetch from 'isomorphic-fetch';
 import { UTILS } from './utils';
@@ -46,7 +45,7 @@ let createRequest = (lib, method) => {
 
                 return params;
             })
-            .then(params => fetch(url.resolve(HOST, template(params)), _.assign(method.options, { headers: headers, body: JSON.stringify(params) })))
+            .then(params => fetch(HOST + template(params), _.assign(method.options, { headers: headers, body: JSON.stringify(params) })))
             .then(UTILS.json)
             .then(UTILS.unwrapDestinyResponse);
     };
