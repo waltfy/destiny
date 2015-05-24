@@ -378,7 +378,7 @@ As per defined in [`endpoints.js`](https://github.com/waltfy/destiny/blob/develo
 
 * * *
 
-### `Destiny::TransferItem(params, headers)`
+### `Destiny::TransferItem(params, headers)` – **COOKIES REQUIRED**
 
 > Transfers an item from a char's inventory to the vault.
 
