@@ -68,8 +68,8 @@ Simply include [`destiny.js`](https://raw.githubusercontent.com/waltfy/destiny/d
 
 params (`Object`)
 
-    - 'membershipType' - `Number`
-    - 'name' - `String`, the name of your account
+  - 'membershipType' - `Number`
+  - 'name' - `String`, the name of your account
 
 #### Sample Usage:
 ```js
@@ -105,31 +105,31 @@ destiny
 `{ name: 'Search', url: 'SearchDestinyPlayer/${ membershipType }/${ name }/', required: ['membershipType', 'name'] }`
 
 
-### Destiny::Account(params)
+### `Destiny::Account(params)`
 
 - endpoints.js: `{ name: 'Account', url: '${ membershipType }/Account/${ membershipId }', required: ['membershipType', 'membershipId'] },`
 
-### Destiny::Character(params)
+### `Destiny::Character(params)`
 
 - endpoints.js: `{ name: 'Character', url: '${ membershipType }/Account/${ membershipId }/Character/${ characterId }/', required: ['membershipType', 'membershipId', 'characterId'] }`
 
-### Destiny::Activities(params)
+### `Destiny::Activities(params)`
 
 - endpoints.js: `{ name: 'Activities', url: '${ membershipType }/Account/${ membershipId }/Character/${ characterId }/Activities', required: ['membershipType', 'membershipId', 'characterId'] }`
 
-### Destiny::Inventory(params)
+### `Destiny::Inventory(params)`
 
 - endpoints.js: `{ name: 'Inventory', url: '${ membershipType }/Account/${ membershipId }/Character/${ characterId }/Inventory', required: ['membershipType', 'membershipId', 'characterId'] }`
 
-### Destiny::Progression(params)
+### `Destiny::Progression(params)`
 
 - endpoints.js: `{ name: 'Progression', url: '${ membershipType }/Account/${ membershipId }/Character/${ characterId }/Progression', required: ['membershipType', 'membershipId', 'characterId'] }`
 
-### Destiny::Equip(params, headers)
+### `Destiny::Equip(params, headers)`
 
 - endpoints.js: `{ name: 'Equip', url: 'EquipItem', required: ['characterId', 'itemId', 'membershipType'] }`
 
-### Destiny::TransferItem(params, headers)
+### `Destiny::TransferItem(params, headers)`
 
 - endpoints.js: `{ name: 'TransferItem', url: 'TransferItem', required: ['characterId', 'itemId', 'itemReferenceHash', 'membershipType'] }`
 
