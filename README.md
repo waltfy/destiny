@@ -63,9 +63,6 @@ In all requests `type` is a `Number` representing the account type, or what netw
 * `1`: XBox Live.
 * `2`: PlayStation Network (PSN).
 
-**NOTE:** In order to get the definitions from Bungie (more detail, and more data) pass in `{ definitions: true }` in the optional parameter `query`.
-
-
 ### `Destiny::Search(params)`
 
 > Returns an `Array` of accounts.
