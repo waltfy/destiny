@@ -1,6 +1,6 @@
 'use strict';
 
-require('es6-promise').polyfill();
+import { Promise } from 'es6-promise';
 import _ from 'lodash';
 import fetch from 'isomorphic-fetch';
 import { UTILS } from './utils';

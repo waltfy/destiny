@@ -6,6 +6,8 @@ Object.defineProperty(exports, '__esModule', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
+var _es6Promise = require('es6-promise');
+
 var _lodash = require('lodash');
 
 var _lodash2 = _interopRequireDefault(_lodash);
@@ -19,8 +21,6 @@ var _utils = require('./utils');
 var _endpoints = require('./endpoints');
 
 var _endpoints2 = _interopRequireDefault(_endpoints);
-
-require('es6-promise').polyfill();
 
 var HOST = 'https://www.bungie.net/platform/Destiny/'; // the is address to Bungie's API
 
@@ -36,7 +36,7 @@ var createRequest = function createRequest(lib, method) {
     var template = _lodash2['default'].template(method.url); // README: so that we can have parametised URLs
 
     lib[method.name] = function (params, headers) {
-        return Promise.resolve(params).then(function (params) {
+        return _es6Promise.Promise.resolve(params).then(function (params) {
 
             if (method.options && method.options.method === 'POST' && !_lodash2['default'].isObject(headers)) {
                 _utils.UTILS.error('You are not providing the headers needed for Destiny.' + method.name + '() please see README.');
