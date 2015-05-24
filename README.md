@@ -62,15 +62,16 @@ Simply include [`destiny.js`](https://raw.githubusercontent.com/waltfy/destiny/d
 **NOTE:** In order to get the definitions from Bungie (more detail, and more data) pass in `{ definitions: true }` in the optional parameter `query`.
 
 
-### Destiny::Search(params)
+### `Destiny::Search(params)`
 
-Returns an `Array` of accounts.
+> Returns an `Array` of accounts.
 
 params (`Object`)
+
     - 'membershipType' - `Number`
     - 'name' - `String`, the name of your account
 
-Sample Usage:
+#### Sample Usage:
 ```js
 var destiny = require('./index')();
 
@@ -87,7 +88,7 @@ destiny
     });
 ```
 
-Sample Response:
+#### Sample Response:
 ```js
 [
     {
@@ -99,7 +100,9 @@ Sample Response:
 ]
 ```
 
-- endpoints.js: `{ name: 'Search', url: 'SearchDestinyPlayer/${ membershipType }/${ name }/', required: ['membershipType', 'name'] }`
+#### Spec
+
+`{ name: 'Search', url: 'SearchDestinyPlayer/${ membershipType }/${ name }/', required: ['membershipType', 'name'] }`
 
 
 ### Destiny::Account(params)
