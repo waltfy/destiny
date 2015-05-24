@@ -59,12 +59,9 @@ Simply include [`destiny.js`](https://raw.githubusercontent.com/waltfy/destiny/d
 
 ## API Overview
 
-In all requests `type` is a `Number` representing the account type, or what network you are in. The network types are:
+In all requests `membershipType` is a `Number` representing the account type, or what network you are in. The network types are:
 * `1`: XBox Live.
 * `2`: PlayStation Network (PSN).
-
-**NOTE:** In order to get the definitions from Bungie (more detail, and more data) pass in `{ definitions: true }` in the optional parameter `query`.
-
 
 ### `Destiny::Search(params)`
 
@@ -117,7 +114,7 @@ As per defined in [`endpoints.js`](https://github.com/waltfy/destiny/blob/develo
   - `membershipId` - `String`, your membership id.
 
 #### Sample Usage:
-
+```js
 var destiny = require('./index')();
 
 destiny
@@ -127,6 +124,7 @@ destiny
     })
     .then(res => { /* deal with response */ })
     .catch(err => { /* handle error */ });
+```
 
 #### Sample Response:
 ```js
@@ -380,7 +378,7 @@ As per defined in [`endpoints.js`](https://github.com/waltfy/destiny/blob/develo
 
 * * *
 
-### `Destiny::TransferItem(params, headers)`
+### `Destiny::TransferItem(params, headers)` – **COOKIES REQUIRED**
 
 > Transfers an item from a char's inventory to the vault.
 
