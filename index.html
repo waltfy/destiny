@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+    <title></title>
 </head>
 <body>
-<script type="text/javascript" src='destiny.js'></script>
+    <script type="text/javascript" src='dist/destiny.js'></script>
+    <script type="text/javascript">
+        console.debug('Destiny:', Destiny);
+
+        var destiny = Destiny('http://localhost:55259/platform/Destiny/');
+
+        destiny
+            .Search({
+                membershipType: 1,
+                name: 'waltercarvalho'
+            })
+            .then(function (res) {
+                console.log('res:', res);
+            })
+            .catch(function (err) {
+                console.log(err.stack);
+            });
+    </script>
 </body>
 </html>

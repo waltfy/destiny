@@ -1,1 +1,1 @@
-module.exports = require('./lib/destiny');
+module.exports = require('./build/main');
