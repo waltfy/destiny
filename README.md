@@ -17,7 +17,7 @@ Unfortunately you cannot "hit" `https://bungie.net` directly. So if you plan to 
 
 `npm install destiny-client`
 
-Note that if you wish, you may override the default host (`https://bungie.net/`) with your own. i.e. If you have a proxy server to handle your requests. See [proxy-server](#proxy-server) instructions above.
+Note that if you wish, you may override the default host (`https://bungie.net/`) with your own. i.e. If you have a proxy server to handle your requests. See [proxy-server](#proxy-server) instructions above. Also works with [React Native](https://facebook.github.io/react-native/).
 
 ```js
 var destiny = require('destiny-client')();
