@@ -23,6 +23,7 @@
         "no-shadow": 0
     },
     "globals": {
-        "console": true
+        "console": true,
+        "fetch": true
     }
 }

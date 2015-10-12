@@ -22,9 +22,8 @@ if (!global.fetch) {
     require('isomorphic-fetch');
 }
 
-// import fetch from 'isomorphic-fetch';
-
 var HOST = 'https://www.bungie.net/platform/Destiny/'; // the is address to Bungie's API
+var API_KEY;
 
 /** FIXME: this could potentially be broken up into smaller blocks
  *
@@ -39,10 +38,6 @@ var createRequest = function createRequest(lib, method) {
 
     lib[method.name] = function (params, headers) {
         return _es6Promise.Promise.resolve(params).then(function (params) {
-
-            if (method.options && method.options.method === 'POST' && !_lodash2['default'].isObject(headers)) {
-                _utils.UTILS.error('You are not providing the headers needed for Destiny.' + method.name + '() please see README.');
-            }
 
             // throw if parameters isn't an object
             if (!_lodash2['default'].isObject(params)) {
@@ -61,7 +56,14 @@ var createRequest = function createRequest(lib, method) {
 
             return params;
         }).then(function (params) {
-            return fetch(HOST + template(params), _lodash2['default'].assign(method.options, { headers: headers, body: JSON.stringify(params) }));
+            var options = _lodash2['default'].merge(method.options || {}, {
+                headers: _lodash2['default'].merge(headers || {}, {
+                    'x-api-key': API_KEY
+                }),
+                body: JSON.stringify(params)
+            });
+
+            return fetch('' + HOST + template(params), options);
         }).then(_utils.UTILS.json).then(_utils.UTILS.unwrapDestinyResponse);
     };
 
@@ -72,12 +74,18 @@ var createRequest = function createRequest(lib, method) {
  * preparing library for export
  */
 var Destiny = function Destiny() {
-    var host = arguments[0] === undefined ? 'https://www.bungie.net/platform/Destiny/' : arguments[0];
+    var apiKey = arguments.length <= 0 || arguments[0] === undefined ? undefined : arguments[0];
+    var host = arguments.length <= 1 || arguments[1] === undefined ? 'https://www.bungie.net/platform/Destiny/' : arguments[1];
+
+    if (!_lodash2['default'].isString(apiKey) || _lodash2['default'].isEmpty(apiKey)) {
+        _utils.UTILS.error('You must provide a valid api key. Expected: String, got: ' + typeof apiKey + '. Get a key at: https://www.bungie.net/developer');
+    }
 
     if (_lodash2['default'].isString(host)) {
         HOST = host;
+        API_KEY = apiKey;
     } else {
-        _utils.UTILS.error('' + host + ' is not a valid URL.');
+        _utils.UTILS.error(host + ' is not a valid URL.');
     }
 
     return _endpoints2['default'].reduce(createRequest, {});
