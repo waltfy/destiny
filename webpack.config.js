@@ -1,5 +1,4 @@
 var path = require('path');
-var webpack = require('webpack');
 
 module.exports = {
     entry: './build/main.js',
@@ -10,13 +9,13 @@ module.exports = {
         library: 'Destiny'
     },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            },
-            mangle: {
-                except: ['exports', 'require']
-            }
-        })
+        // new webpack.optimize.UglifyJsPlugin({
+        //     compress: {
+        //         warnings: false
+        //     },
+        //     mangle: {
+        //         except: ['exports', 'require']
+        //     }
+        // })
     ]
 };

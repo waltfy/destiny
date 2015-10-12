@@ -11,7 +11,7 @@ let GET = [
         { name: 'Activities', url: '${ membershipType }/Account/${ membershipId }/Character/${ characterId }/Activities', required: ['membershipType', 'membershipId', 'characterId'] },
         { name: 'Inventory', url: '${ membershipType }/Account/${ membershipId }/Character/${ characterId }/Inventory', required: ['membershipType', 'membershipId', 'characterId'] },
         { name: 'Progression', url: '${ membershipType }/Account/${ membershipId }/Character/${ characterId }/Progression', required: ['membershipType', 'membershipId', 'characterId'] }
-    ];
+    ].map(UTILS.assignMap({ options: { method: UTILS.METHODS.GET, headers: UTILS.HEADERS } }));
 
 /**
  * List of POST Endpoints available on the Destiny API

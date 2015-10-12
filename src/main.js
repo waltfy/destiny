@@ -1,13 +1,16 @@
 'use strict';
 
-import 'babel/polyfill';
-import url from 'url';
+import { Promise } from 'es6-promise';
 import _ from 'lodash';
-import fetch from 'isomorphic-fetch';
 import { UTILS } from './utils';
 import ENDPOINTS from './endpoints';
 
+if (!global.fetch) {
+    require('isomorphic-fetch');
+}
+
 var HOST = 'https://www.bungie.net/platform/Destiny/'; // the is address to Bungie's API
+var API_KEY;
 
 /** FIXME: this could potentially be broken up into smaller blocks
  *
@@ -23,10 +26,6 @@ let createRequest = (lib, method) => {
     lib[method.name] = function (params, headers) {
         return Promise.resolve(params)
             .then(params => {
-
-                if (method.options && method.options.method === 'POST' && !_.isObject(headers)) {
-                    UTILS.error(`You are not providing the headers needed for Destiny.${ method.name }() please see README.`);
-                }
 
                 // throw if parameters isn't an object
                 if (!_.isObject(params)) {
@@ -46,7 +45,24 @@ let createRequest = (lib, method) => {
 
                 return params;
             })
-            .then(params => fetch(url.resolve(HOST, template(params)), _.assign(method.options, { headers: headers, body: JSON.stringify(params) })))
+            .then(params => {
+                let options = _.merge(
+                    method.options || {},
+                    {
+                        headers: _.merge(headers || {},
+                            {
+                                'x-api-key': API_KEY
+                            }
+                        ),
+                        body: JSON.stringify(params)
+                    }
+                );
+
+                return fetch(
+                    `${HOST}${template(params)}`,
+                    options
+                );
+            })
             .then(UTILS.json)
             .then(UTILS.unwrapDestinyResponse);
     };
@@ -57,10 +73,15 @@ let createRequest = (lib, method) => {
 /**
  * preparing library for export
  */
-let Destiny = (host='https://www.bungie.net/platform/Destiny/') => {
+let Destiny = (apiKey=undefined, host='https://www.bungie.net/platform/Destiny/') => {
+
+    if (!_.isString(apiKey) || _.isEmpty(apiKey)) {
+        UTILS.error(`You must provide a valid api key. Expected: String, got: ${ typeof apiKey }. Get a key at: https://www.bungie.net/developer`);
+    }
 
     if (_.isString(host)) {
         HOST = host;
+        API_KEY = apiKey;
     } else {
         UTILS.error(`${ host } is not a valid URL.`);
     }
