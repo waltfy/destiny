@@ -63,6 +63,10 @@ var createRequest = function createRequest(lib, method) {
                 body: JSON.stringify(params)
             });
 
+            if (options.method === _utils.UTILS.METHODS.GET) {
+                delete options.body;
+            }
+
             return fetch('' + HOST + template(params), options);
         }).then(_utils.UTILS.json).then(_utils.UTILS.unwrapDestinyResponse);
     };

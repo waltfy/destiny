@@ -58,6 +58,10 @@ let createRequest = (lib, method) => {
                     }
                 );
 
+                if (options.method === UTILS.METHODS.GET) {
+                    delete options.body;
+                }
+
                 return fetch(
                     `${HOST}${template(params)}`,
                     options
