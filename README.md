@@ -9,6 +9,12 @@ Please feel free submit issues and requests, or [get in touch](//www.twitter.com
 
 ## Getting Started
 
+NOTE: As of Desiny 2.0, The Taken King, Bungie is deeming some items as "Classified", therefore all requests now require the `X-API-Key` HTTP header. The `Destiny` constructor should now be called as below:
+
+```
+var destiny = Destiny('your_api_key');
+```
+
 ### Proxy Server
 
 Unfortunately you cannot "hit" `https://bungie.net` directly. So if you plan to use this library in client-side code, due to `CORS` you'll have to run your own proxy server to handle your requests to Bungie for you. I have added an example proxy server ([`proxy.js`](https://github.com/waltfy/destiny/blob/develop/proxy.js)). Simply run `node proxy.js`. Credit to [@phuu](https://github.com/phuu).
@@ -434,7 +440,7 @@ As per defined in [`endpoints.js`](https://github.com/waltfy/destiny/blob/develo
   * Added pre-commit hooks to ensure builds for both Node and Web are committed before pushing
   * Removed old CONFIG file
   * Improved overall architecture of the library
-  * Added linting 
+  * Added linting
 - `v.0.3.2` - **NOTE:** If you depended on this version make sure you explicit define it on your `package.json`.
 
 ## License
