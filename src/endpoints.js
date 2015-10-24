@@ -6,11 +6,11 @@ import { UTILS } from './utils';
  */
 let GET = [
         { name: 'Search', url: 'SearchDestinyPlayer/${ membershipType }/${ name }/', required: ['membershipType', 'name'] },
-        { name: 'Account', url: '${ membershipType }/Account/${ membershipId }', required: ['membershipType', 'membershipId'] },
+        { name: 'Account', url: '${ membershipType }/Account/${ membershipId }/', required: ['membershipType', 'membershipId'] },
         { name: 'Character', url: '${ membershipType }/Account/${ membershipId }/Character/${ characterId }/', required: ['membershipType', 'membershipId', 'characterId'] },
-        { name: 'Activities', url: '${ membershipType }/Account/${ membershipId }/Character/${ characterId }/Activities', required: ['membershipType', 'membershipId', 'characterId'] },
-        { name: 'Inventory', url: '${ membershipType }/Account/${ membershipId }/Character/${ characterId }/Inventory', required: ['membershipType', 'membershipId', 'characterId'] },
-        { name: 'Progression', url: '${ membershipType }/Account/${ membershipId }/Character/${ characterId }/Progression', required: ['membershipType', 'membershipId', 'characterId'] }
+        { name: 'Activities', url: '${ membershipType }/Account/${ membershipId }/Character/${ characterId }/Activities/', required: ['membershipType', 'membershipId', 'characterId'] },
+        { name: 'Inventory', url: '${ membershipType }/Account/${ membershipId }/Character/${ characterId }/Inventory/', required: ['membershipType', 'membershipId', 'characterId'] },
+        { name: 'Progression', url: '${ membershipType }/Account/${ membershipId }/Character/${ characterId }/Progression/', required: ['membershipType', 'membershipId', 'characterId'] }
     ].map(UTILS.assignMap({ options: { method: UTILS.METHODS.GET, headers: UTILS.HEADERS } }));
 
 /**
