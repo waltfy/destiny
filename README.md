@@ -80,7 +80,7 @@ In all requests `membershipType` is a `Number` representing the account type, or
 
 #### Sample Usage:
 ```js
-var destiny = require('./index')(API_KEY);
+var destiny = require('destiny-client')(API_KEY);
 
 destiny
     .Search({
@@ -121,7 +121,7 @@ As per defined in [`endpoints.js`](https://github.com/waltfy/destiny/blob/develo
 
 #### Sample Usage:
 ```js
-var destiny = require('./index')(API_KEY);
+var destiny = require('destiny-client')(API_KEY);
 
 destiny
     .Account({
@@ -171,7 +171,7 @@ As per defined in [`endpoints.js`](https://github.com/waltfy/destiny/blob/develo
 
 #### Sample Usage:
 ```js
-var destiny = require('./index')(API_KEY);
+var destiny = require('destiny-client')(API_KEY);
 
 destiny
     .Character({
@@ -261,7 +261,7 @@ As per defined in [`endpoints.js`](https://github.com/waltfy/destiny/blob/develo
 
 #### Sample Usage:
 ```js
-var destiny = require('./index')(API_KEY);
+var destiny = require('destiny-client')(API_KEY);
 
 destiny
     .Character({
@@ -292,7 +292,7 @@ As per defined in [`endpoints.js`](https://github.com/waltfy/destiny/blob/develo
 
 #### Sample Usage:
 ```js
-var destiny = require('./index')(API_KEY);
+var destiny = require('destiny-client')(API_KEY);
 
 destiny
     .Inventory({
@@ -323,7 +323,7 @@ As per defined in [`endpoints.js`](https://github.com/waltfy/destiny/blob/develo
 
 #### Sample Usage:
 ```js
-var destiny = require('./index')(API_KEY);
+var destiny = require('destiny-client')(API_KEY);
 
 destiny
     .Inventory({
@@ -358,7 +358,7 @@ As per defined in [`endpoints.js`](https://github.com/waltfy/destiny/blob/develo
 
 #### Sample Usage:
 ```js
-var destiny = require('./index')(API_KEY);
+var destiny = require('destiny-client')(API_KEY);
 
 var AUTH = {
   'Cookie': '{{ cookie }}',
@@ -402,7 +402,7 @@ As per defined in [`endpoints.js`](https://github.com/waltfy/destiny/blob/develo
 
 #### Sample Usage:
 ```js
-var destiny = require('./index')(API_KEY);
+var destiny = require('destiny-client')(API_KEY);
 
 var AUTH = {
   'Cookie': '{{ cookie }}',
