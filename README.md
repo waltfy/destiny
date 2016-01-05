@@ -50,7 +50,7 @@ Simply include [`destiny.js`](https://raw.githubusercontent.com/waltfy/destiny/d
 
     destiny
         .Search({
-            memebershipType: 1,
+            membershipType: 1,
             name: 'waltercarvalho'
         })
         .then(users => {
