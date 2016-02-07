@@ -30,7 +30,7 @@ var destiny = require('destiny-client')();
 
 destiny
   .Search({
-    memebershipType: 1,
+    membershipType: 1,
     name: 'waltercarvalho'
   })
   .then(users => {
