@@ -26,7 +26,7 @@ Unfortunately you cannot "hit" `https://bungie.net` directly. So if you plan to 
 Note that if you wish, you may override the default host (`https://bungie.net/`) with your own. i.e. If you have a proxy server to handle your requests. See [proxy-server](#proxy-server) instructions above. Also works with [React Native](https://facebook.github.io/react-native/).
 
 ```js
-var destiny = require('destiny-client')();
+var destiny = require('destiny-client')(API_KEY);
 
 destiny
   .Search({
@@ -46,11 +46,11 @@ Simply include [`destiny.js`](https://raw.githubusercontent.com/waltfy/destiny/d
 <script src='destiny.js' type='text/javascript'></script>
 <script type="text/javascript">
 
-    var destiny = Destiny('http://{{ host }}:{{ yourport }}/platform/Destiny/'); // this is your proxy server
+    var destiny = Destiny(API_KEY, 'http://{{ host }}:{{ yourport }}/platform/Destiny/'); // this is your proxy server
 
     destiny
         .Search({
-            memebershipType: 1,
+            membershipType: 1,
             name: 'waltercarvalho'
         })
         .then(users => {
@@ -80,7 +80,7 @@ In all requests `membershipType` is a `Number` representing the account type, or
 
 #### Sample Usage:
 ```js
-var destiny = require('./index')();
+var destiny = require('destiny-client')(API_KEY);
 
 destiny
     .Search({
@@ -121,7 +121,7 @@ As per defined in [`endpoints.js`](https://github.com/waltfy/destiny/blob/develo
 
 #### Sample Usage:
 ```js
-var destiny = require('./index')();
+var destiny = require('destiny-client')(API_KEY);
 
 destiny
     .Account({
@@ -171,7 +171,7 @@ As per defined in [`endpoints.js`](https://github.com/waltfy/destiny/blob/develo
 
 #### Sample Usage:
 ```js
-var destiny = require('./index')();
+var destiny = require('destiny-client')(API_KEY);
 
 destiny
     .Character({
@@ -261,7 +261,7 @@ As per defined in [`endpoints.js`](https://github.com/waltfy/destiny/blob/develo
 
 #### Sample Usage:
 ```js
-var destiny = require('./index')();
+var destiny = require('destiny-client')(API_KEY);
 
 destiny
     .Character({
@@ -292,7 +292,7 @@ As per defined in [`endpoints.js`](https://github.com/waltfy/destiny/blob/develo
 
 #### Sample Usage:
 ```js
-var destiny = require('./index')();
+var destiny = require('destiny-client')(API_KEY);
 
 destiny
     .Inventory({
@@ -323,7 +323,7 @@ As per defined in [`endpoints.js`](https://github.com/waltfy/destiny/blob/develo
 
 #### Sample Usage:
 ```js
-var destiny = require('./index')();
+var destiny = require('destiny-client')(API_KEY);
 
 destiny
     .Inventory({
@@ -358,7 +358,7 @@ As per defined in [`endpoints.js`](https://github.com/waltfy/destiny/blob/develo
 
 #### Sample Usage:
 ```js
-var destiny = require('./index')();
+var destiny = require('destiny-client')(API_KEY);
 
 var AUTH = {
   'Cookie': '{{ cookie }}',
@@ -402,7 +402,7 @@ As per defined in [`endpoints.js`](https://github.com/waltfy/destiny/blob/develo
 
 #### Sample Usage:
 ```js
-var destiny = require('./index')();
+var destiny = require('destiny-client')(API_KEY);
 
 var AUTH = {
   'Cookie': '{{ cookie }}',
