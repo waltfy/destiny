@@ -1,3 +1,5 @@
+:warning: I do not intend to maintain this project any longer — feel free to ask for contributor privilege.
+
 Destiny-Client [![npm version](https://badge.fury.io/js/destiny-client.svg)](http://badge.fury.io/js/destiny-client) [![Gitter](https://badges.gitter.im/Destiny-Client.svg)](https://gitter.im/waltfy/destiny?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ====
 
